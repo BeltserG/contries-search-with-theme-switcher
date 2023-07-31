@@ -1,8 +1,9 @@
 import React from "react";
+import {Header} from "../widgets/Header"
 import "./App.scss"
 function App (){
     return (
-        <h1>Hello!</h1>
+        <Header/>
     )
 }
 
