@@ -1,6 +1,6 @@
 import React from "react";
-import {Header} from "../widgets/Header"
-import "./App.scss"
+import {Header} from "../widgets/header/Header"
+import "./styles/App.scss"
 function App (){
     return (
         <Header/>

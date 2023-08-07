@@ -1,13 +1,18 @@
+@use "/src/app/styles/Variables" as v;
+
 .header{
     display:flex;
     justify-content: space-between;
     padding:1rem;
+    // margin-left: v.$test;
 }
+
 .header__main-heading{
     
 }
 .header__color-theme{
-
+    display: flex;
+    align-items: center;
 }
 .header__color-theme--icon{
 
