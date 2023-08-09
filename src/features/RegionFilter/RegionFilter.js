@@ -3,7 +3,7 @@ import "./styles/RegionFilter.scss";
 
 const RegionFilter = ()=>{
     return(
-        <div className="filter-container">
+        <div className="filter">
             <select className="filter__select">
                 <option value="africa">africa</option>
                 <option value="america">america</option>

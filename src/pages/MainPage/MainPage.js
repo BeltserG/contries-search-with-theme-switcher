@@ -1,7 +1,6 @@
 import React from 'react';
-import { Header } from '../../widgets/header/Header';
-import { CountrySearch } from '../../features/CountrySearch/CountrySearch';
-import { RegionFilter } from '../../features/RegionFilter/RegionFilter';
+import { Header } from '../../widgets/Header/Header';
+import SearchPanel from '../../widgets/SearchPanel/SearchPanel';
 import SearchResults from '../../widgets/SearchResults/SearchResults';
 
 function MainPage(props) {
@@ -14,8 +13,7 @@ function MainPage(props) {
             />
         </header>
         <main>
-            <CountrySearch />
-            <RegionFilter />
+            <SearchPanel />
             <SearchResults />
         </main>
     </div>
