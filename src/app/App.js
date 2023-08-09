@@ -1,8 +1,7 @@
 import React from "react";
-import {Header} from "../widgets/header/Header"
-import {CountrySearch} from "/src/features/CountrySearch/CountrySearch"
+import MainPage from "../pages/MainPage/MainPage";
 import "./styles/App.scss"
-const cn = require('classnames');
+import classNames from "classnames";
 
 function App (){
     const [darkMode, setDarkMode] = React.useState(false);
@@ -11,14 +10,12 @@ function App (){
         setDarkMode(prev=>!prev);
     }
     return (
-        <div className={cn(darkModeClass)}>
-            <Header
+        <div className={classNames("app-container", darkModeClass)}>
+            <MainPage
                 changeMode={changeMode}
                 darkMode={darkMode}
             />
-            <CountrySearch/>
         </div>
     )
 }
-
 export {App}

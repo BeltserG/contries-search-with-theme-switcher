@@ -5,7 +5,7 @@ import "./styles/Header.scss";
 
 const Header = (props) =>{
     return(
-        <header className="header">
+        <div className="header">
             <h1 className="header__main-heading">Where in the world?</h1>
             <div className="header__color-theme" onClick={()=>props.changeMode()}>
                 <img className="header__color-theme--icon" src={
@@ -13,7 +13,7 @@ const Header = (props) =>{
                 }/>
                 <div className="header__color-theme--text">Dark Mode</div>
             </div>
-        </header>
+        </div>
     )
 }
 
