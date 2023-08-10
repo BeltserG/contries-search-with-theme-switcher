@@ -1,24 +1,41 @@
 import classNames from 'classnames';
 import React from 'react';
-import countriesRequest  from './api/CountriesApi';
+import Card from './Components/Card';
+// import countriesRequest  from './api/CountriesApi';
 
 const SearchResults = () => {
     const data = require("/public/data.json");
+    const [cardPageStatus, setCardPageStatus] = React.useState(false)
+    function changeCardPageStatus (){
+        setCardPageStatus(prev=>!prev)
+    }
+    const [currentCardData, setCardData] = React.useState({})
+    function changeCardData (cardData){
+        setCardData(cardData)
+    }
     const cards = data.map(item =>{
         return(
-            <section key={item.name}>
-                <img src={item.flags.svg} style={{width: "100px"}}/>
-                <h3>{item.name}</h3>
-                <p>population: {item.population}</p>
-                <p>region: {item.region}</p>
-                <p>capital: {item.capital}</p>
-            </section>
+            <Card
+            key={item.name}
+            data = {item}
+            cardPageStatus={cardPageStatus}
+            changeCardPageStatus = {changeCardPageStatus}
+            changeCardData = {changeCardData}
+            />
         )
     })
 
     return (
         <div className={classNames("search-results")}>
-            {cards}
+            {cardPageStatus ? 
+            <Card
+                key={currentCardData.name}
+                data = {currentCardData}
+                cardPageStatus={cardPageStatus}
+                changeCardPageStatus = {changeCardPageStatus}
+                changeCardData = {changeCardData}
+            /> : cards
+            }
         </div>
     )
 }
