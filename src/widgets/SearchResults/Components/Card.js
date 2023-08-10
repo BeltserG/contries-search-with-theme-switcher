@@ -3,9 +3,7 @@ import React from 'react'
 const Card = ({data, changeCardPageStatus, changeCardData}) => {
   return (
     <section key={data.name} onClick={()=>{
-        
         changeCardPageStatus()
-        console.log(changeCardData)
         changeCardData(data)
         }}>
         <img src={data.flags.svg} style={{width: "100px"}}/>

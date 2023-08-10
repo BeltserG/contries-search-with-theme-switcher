@@ -1,9 +1,11 @@
 import classNames from 'classnames';
 import React from 'react';
-import Card from './Components/Card';
+import CountryView from './Components/CountryView/CountryView';
+import AllResults from './Components/AllResults/AllResults';
 // import countriesRequest  from './api/CountriesApi';
 
 const SearchResults = () => {
+    console.log('SearchResults rendering...');
     const data = require("/public/data.json");
     const [cardPageStatus, setCardPageStatus] = React.useState(false)
     function changeCardPageStatus (){
@@ -13,28 +15,35 @@ const SearchResults = () => {
     function changeCardData (cardData){
         setCardData(cardData)
     }
-    const cards = data.map(item =>{
-        return(
-            <Card
-            key={item.name}
-            data = {item}
-            cardPageStatus={cardPageStatus}
-            changeCardPageStatus = {changeCardPageStatus}
-            changeCardData = {changeCardData}
-            />
-        )
-    })
+    // const cards = data.map(item =>{
+    //     return(
+    //         <Card
+    //         key={item.name}
+    //         data = {item}
+    //         cardPageStatus={cardPageStatus}
+    //         changeCardPageStatus = {changeCardPageStatus}
+    //         changeCardData = {changeCardData}
+    //         />
+    //     )
+    // })
 
     return (
         <div className={classNames("search-results")}>
             {cardPageStatus ? 
-            <Card
-                key={currentCardData.name}
+            <CountryView
+                key="country-view"
                 data = {currentCardData}
                 cardPageStatus={cardPageStatus}
                 changeCardPageStatus = {changeCardPageStatus}
                 changeCardData = {changeCardData}
-            /> : cards
+            /> :
+            <AllResults
+                key="results"
+                data = {data}
+                cardPageStatus={cardPageStatus}
+                changeCardPageStatus = {changeCardPageStatus}
+                changeCardData = {changeCardData}
+            />
             }
         </div>
     )
