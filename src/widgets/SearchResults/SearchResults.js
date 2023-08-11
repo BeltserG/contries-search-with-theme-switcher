@@ -36,6 +36,7 @@ const SearchResults = () => {
                 cardPageStatus={cardPageStatus}
                 changeCardPageStatus = {changeCardPageStatus}
                 changeCardData = {changeCardData}
+                fullData = {data}
             /> :
             <AllResults
                 key="results"
