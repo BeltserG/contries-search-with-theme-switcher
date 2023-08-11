@@ -4,19 +4,24 @@ import SearchPanel from '../../widgets/SearchPanel/SearchPanel';
 import SearchResults from '../../widgets/SearchResults/SearchResults';
 
 function MainPage(props) {
-  return (
-    <div className='main-page'>
-        <header>
-            <Header 
-                changeMode={props.changeMode}
-                darkMode={props.darkMode}
-            />
-        </header>
-        <main>
-            <SearchPanel />
-            <SearchResults />
-        </main>
-    </div>
+  const data = require("/public/data.json");
+  const [searchRequest, setSearchRequest] = React.useState(data)
+  function changeSearchRequest(value){
+    setSearchRequest(data.filter(item=>item.name.toLowerCase().includes(value.toLowerCase())))
+  }
+    return(
+      <div className='main-page'>
+          <header>
+              <Header 
+                  changeMode={props.changeMode}
+                  darkMode={props.darkMode}
+              />
+          </header>
+          <main>
+              <SearchPanel changeSearchRequest={changeSearchRequest}/>
+              <SearchResults searchRequest={searchRequest}/>
+          </main>
+      </div>
   )
 }
 

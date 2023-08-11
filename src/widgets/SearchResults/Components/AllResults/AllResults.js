@@ -1,8 +1,8 @@
 import React from 'react';
 import Card from '../Card';
 
-const AllResults = ({data, changeCardPageStatus, changeCardData}) => {
-    const cards = data.map(item =>{
+const AllResults = ({searchRequest, changeCardPageStatus, changeCardData}) => {
+    const cards = searchRequest.map(item =>{
         return(
             <Card
                 key = {item.name}

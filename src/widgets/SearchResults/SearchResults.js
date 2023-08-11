@@ -4,28 +4,17 @@ import CountryView from './Components/CountryView/CountryView';
 import AllResults from './Components/AllResults/AllResults';
 // import countriesRequest  from './api/CountriesApi';
 
-const SearchResults = () => {
-    console.log('SearchResults rendering...');
-    const data = require("/public/data.json");
+const SearchResults = ({searchRequest}) => {
+    // console.log('SearchResults rendering...');
     const [cardPageStatus, setCardPageStatus] = React.useState(false)
     function changeCardPageStatus (){
         setCardPageStatus(prev=>!prev)
     }
+
     const [currentCardData, setCardData] = React.useState({})
     function changeCardData (cardData){
         setCardData(cardData)
     }
-    // const cards = data.map(item =>{
-    //     return(
-    //         <Card
-    //         key={item.name}
-    //         data = {item}
-    //         cardPageStatus={cardPageStatus}
-    //         changeCardPageStatus = {changeCardPageStatus}
-    //         changeCardData = {changeCardData}
-    //         />
-    //     )
-    // })
 
     return (
         <div className={classNames("search-results")}>
@@ -36,11 +25,11 @@ const SearchResults = () => {
                 cardPageStatus={cardPageStatus}
                 changeCardPageStatus = {changeCardPageStatus}
                 changeCardData = {changeCardData}
-                fullData = {data}
+                fullData = {searchRequest}
             /> :
             <AllResults
                 key="results"
-                data = {data}
+                searchRequest = {searchRequest}
                 cardPageStatus={cardPageStatus}
                 changeCardPageStatus = {changeCardPageStatus}
                 changeCardData = {changeCardData}
