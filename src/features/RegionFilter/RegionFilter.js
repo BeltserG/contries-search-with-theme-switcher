@@ -1,12 +1,13 @@
 import React from "react";
 import "./styles/RegionFilter.scss";
 
-const RegionFilter = ()=>{
+const RegionFilter = ({changeSearchRequest})=>{
     return(
         <div className="filter">
-            <select className="filter__select">
+            <select onChange={(e)=>changeSearchRequest(e.target.value, "region")} className="filter__select">
+                <option value="">none</option>
                 <option value="africa">africa</option>
-                <option value="america">america</option>
+                <option value="americas">americas</option>
                 <option value="asia">asia</option>
                 <option value="europe">europe</option>
                 <option value="oceania">oceania</option>

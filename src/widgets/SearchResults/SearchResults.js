@@ -4,8 +4,7 @@ import CountryView from './Components/CountryView/CountryView';
 import AllResults from './Components/AllResults/AllResults';
 // import countriesRequest  from './api/CountriesApi';
 
-const SearchResults = ({searchRequest}) => {
-    // console.log('SearchResults rendering...');
+const SearchResults = ({searchRequest, fullData}) => {
     const [cardPageStatus, setCardPageStatus] = React.useState(false)
     function changeCardPageStatus (){
         setCardPageStatus(prev=>!prev)
@@ -25,7 +24,7 @@ const SearchResults = ({searchRequest}) => {
                 cardPageStatus={cardPageStatus}
                 changeCardPageStatus = {changeCardPageStatus}
                 changeCardData = {changeCardData}
-                fullData = {searchRequest}
+                fullData = {fullData}
             /> :
             <AllResults
                 key="results"

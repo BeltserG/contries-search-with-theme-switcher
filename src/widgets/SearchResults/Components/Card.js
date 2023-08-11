@@ -5,7 +5,7 @@ const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullD
   let content = ()=>{
     return (
       <>
-        <img src={data.flags.svg} style={{width: "100px"}}/>
+        <img src={data.flag} style={{width: "100px"}}/>
         <h3>{data.name}</h3>
         {cardPageStatus && <p>native name: {data.nativeName}</p>}
         <p>population: {data.population}</p>
@@ -25,8 +25,8 @@ const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullD
   return (
     <section key={data.name} onClick={()=>{
         if(!cardPageStatus){
-            changeCardPageStatus()
             changeCardData(data)
+            changeCardPageStatus()  
         }
       }}>
       {content()}

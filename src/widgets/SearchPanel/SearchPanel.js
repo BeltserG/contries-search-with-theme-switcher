@@ -5,7 +5,7 @@ const SearchPanel = ({changeSearchRequest}) => {
   return (
     <section>
             <CountrySearch changeSearchRequest={changeSearchRequest}/>
-            <RegionFilter />
+            <RegionFilter changeSearchRequest={changeSearchRequest}/>
     </section>
   )
 }
