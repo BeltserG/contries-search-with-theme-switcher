@@ -1,11 +1,61 @@
 @use "/src/app/styles/Variables" as v;
 
-.filter{
-
-}
 .filter__select{
+    font-size: .8rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    gap:.25rem;
+    width: 14rem;
+    position:relative;
+    cursor: pointer;
+}
 
+.filter__select--selected{
+    display: flex;
+    background-color: v.$white;
+    box-shadow: v.$smallShadow;
+    padding: 1rem 1rem 1rem 2rem ;
+    border-radius: .5rem;
+}
+.filter__select--selected span{
+    flex:1;
+}
+.expand-more-image{
+    width:1rem;
+    transition: v.$trans-fast;
+}
+.select-list-opened{
+    transform: rotate(180deg);
+}
+.options-container{
+    position:absolute;
+    top: 3.3rem;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    // align-items: flex-start;
+    background-color: v.$white;
+    box-shadow: v.$smallShadow;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    opacity:0;
+    visibility: hidden;
+    transition: v.$trans-fast;
+}
+.options-container-opened{
+    opacity: 1;
+    visibility: visible;
 }
 .filter__select--option{
+    text-transform: capitalize;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: .2rem 0;
+    border-bottom: 1px solid transparent;
 
+}
+.filter__select--option:hover,
+.filter__select--option:focus{
+    border-bottom: 1px solid v.$darkGray;
 }

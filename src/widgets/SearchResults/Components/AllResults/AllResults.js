@@ -1,5 +1,6 @@
 import React from 'react';
-import Card from '../Card';
+import Card from '../Card/Card';
+import "./styles/AllResults.scss"
 
 const AllResults = ({searchRequest, changeCardPageStatus, changeCardData}) => {
     const cards = searchRequest.map(item =>{
@@ -13,9 +14,9 @@ const AllResults = ({searchRequest, changeCardPageStatus, changeCardData}) => {
         )
     })
     return (
-    <>
+    <div className='all-results'>
         {cards}
-    </>
+    </div>
     )
 }
 

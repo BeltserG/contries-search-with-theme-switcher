@@ -1,0 +1,46 @@
+@use "/src/app/styles/Variables" as v;
+
+.card{
+    border-radius: .5rem;
+    background-color: v.$white;
+    box-shadow: v.$smallShadow;
+    width:calc(minmax(100%, 125rem));
+    overflow: hidden;
+
+    cursor: pointer;
+}
+.card__flag{
+    width:100%;
+    max-width: 30rem;
+}
+.card__info{
+    padding: 2rem 1.5rem;
+}
+.card__info span{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.card__info--country-name{
+    margin-bottom:1rem;
+}
+.card__info--country-name-native{
+
+}
+.card__info--population{
+
+}
+.card__info--region{
+
+}
+.card__info--capital{
+
+}
+.card__info--domain{
+
+}
+.card__info--currencies{
+
+}
+.card__languages{
+
+}

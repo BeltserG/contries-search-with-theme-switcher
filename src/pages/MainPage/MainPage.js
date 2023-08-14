@@ -26,7 +26,7 @@ function MainPage(props) {
   },[searchCriteriaList]);
 
   function changeSearchRequest(value, criteria){
-    setSearchCriteriaList(prev=>{return {...prev, [criteria]: value}});
+    setSearchCriteriaList(prev=>{return {...prev, [criteria]: value === "none" ? "" : value}});
   }
   return(
     <div className='main-page'>
