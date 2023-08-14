@@ -3,7 +3,7 @@
 $darkBlue: hsl(209, 23%, 22%);
 $veryDarkBlueDarkMode:hsl(207, 26%, 17%);
 $veryDarkBlueLightMode:hsl(200, 15%, 8%);
-$darkGray: hsl(0, 0%, 52%);
+$darkGray: #858585;
 $veryLightGray:hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
 
@@ -15,3 +15,8 @@ $fs-secondary: 16px;
 //Font-family
 
 $ff-nunito: 'Nunito Sans', sans-serif;
+
+//Shadow
+$smallShadow:
+0px 1px 2.6px -8px rgba(0, 0, 0, 0.08),
+0px 1px 21px -8px rgba(0, 0, 0, 0.26);

@@ -1,0 +1,10 @@
+@use "/src/app/styles/Variables" as v;
+
+.search-panel{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1.25rem 1rem;
+    gap:2rem;
+}

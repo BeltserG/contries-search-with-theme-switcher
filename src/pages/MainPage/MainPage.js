@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '../../widgets/Header/Header';
 import SearchPanel from '../../widgets/SearchPanel/SearchPanel';
 import SearchResults from '../../widgets/SearchResults/SearchResults';
+import "./styles/MainPage.scss";
 
 function MainPage(props) {
   const fullData = require("/public/data.json");

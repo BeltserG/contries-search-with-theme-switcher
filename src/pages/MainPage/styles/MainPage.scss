@@ -1,0 +1,7 @@
+@use "/src/app/styles/Variables" as v;
+
+.main-page{
+    display: flex;
+    flex-direction: column;
+    background-color: v.$veryLightGray;
+}
