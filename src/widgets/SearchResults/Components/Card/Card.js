@@ -1,6 +1,7 @@
 import React from 'react';
 import BorderCountries from '../../../../features/BorderCountries/BorderCountries';
 import "./styles/Card.scss";
+import classNames from 'classnames';
 
 const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullData}) => {
   let content = ()=>{
@@ -26,7 +27,7 @@ const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullD
     )
   };
   return (
-    <section className='card' key={data.name} onClick={()=>{
+    <section className={classNames("card", cardPageStatus ? "fullview" : "")} key={data.name} onClick={()=>{
         if(!cardPageStatus){
             changeCardData(data)
             changeCardPageStatus()  

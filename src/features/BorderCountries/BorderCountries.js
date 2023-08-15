@@ -1,4 +1,5 @@
 import React from 'react';
+import "./styles/BorderCountries.scss";
 
 const BorderCountries = ({borders, changeCardData, fullData}) => {
     function neighbourSearch(code){
@@ -8,17 +9,18 @@ const BorderCountries = ({borders, changeCardData, fullData}) => {
     if(borders){
         buttons = borders.map(b => {
             return(
-                <button key={b} onClick={()=>changeCardData(neighbourSearch(b))}>{neighbourSearch(b).name}</button>
+                <button className='border-countries__btn' key={b} onClick={()=>changeCardData(neighbourSearch(b))}>{neighbourSearch(b).name}</button>
             )
         })
     }
 
     return (
-    <>
-        {buttons && <h4>border countries</h4>}
-        {buttons && buttons}
-    </>
-
+        <div className="border-countries">
+            {buttons && <h4 className="border-countries__heading">border countries</h4>}
+            <div className='border-countries__btns-container'>
+                {buttons && buttons}
+            </div>
+        </div>
     )
 }
 

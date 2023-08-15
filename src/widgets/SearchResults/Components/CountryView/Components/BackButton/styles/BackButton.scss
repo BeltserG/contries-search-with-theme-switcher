@@ -1,0 +1,14 @@
+@use "/src/app/styles/Variables" as v;
+
+.btn-back{
+    align-self: flex-start;
+    @include v.button;
+    box-shadow: v.$largeShadow;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .3rem 1.5rem;
+}
+.btn-back__img{
+    width: 20px;
+}

@@ -9,19 +9,35 @@
 
     cursor: pointer;
 }
+.fullview{
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
 .card__flag{
     width:100%;
     max-width: 30rem;
 }
 .card__info{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
     padding: 2rem 1.5rem;
 }
+.card__info p{
+    font-size: .9rem;
+}
+.fullview .card__info{
+    padding: 2rem 0;
+    gap: .4rem;
+}
 .card__info span{
-    font-weight: 600;
+    font-weight: 800;
     text-transform: capitalize;
 }
 .card__info--country-name{
     margin-bottom:1rem;
+    font-size: 1.25rem;
 }
 .card__info--country-name-native{
 
@@ -36,7 +52,7 @@
 
 }
 .card__info--domain{
-
+    margin-top: 2.5rem;
 }
 .card__info--currencies{
 

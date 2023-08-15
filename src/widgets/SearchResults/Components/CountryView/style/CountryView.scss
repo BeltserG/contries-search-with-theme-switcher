@@ -1,5 +1,8 @@
 @use "/src/app/styles/Variables" as v;
 
 .country-view{
-    padding: 2rem;
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    padding: 2.5rem 2rem;
 }

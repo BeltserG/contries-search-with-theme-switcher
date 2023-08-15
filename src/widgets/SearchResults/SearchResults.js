@@ -4,11 +4,11 @@ import CountryView from './Components/CountryView/CountryView';
 import AllResults from './Components/AllResults/AllResults';
 // import countriesRequest  from './api/CountriesApi';
 
-const SearchResults = ({searchRequest, fullData}) => {
-    const [cardPageStatus, setCardPageStatus] = React.useState(false)
-    function changeCardPageStatus (){
-        setCardPageStatus(prev=>!prev)
-    }
+const SearchResults = ({searchRequest, fullData, changeCardPageStatus, cardPageStatus}) => {
+    // const [cardPageStatus, setCardPageStatus] = React.useState(false)
+    // function changeCardPageStatus (){
+    //     setCardPageStatus(prev=>!prev)
+    // }
 
     const [currentCardData, setCardData] = React.useState({})
     function changeCardData (cardData){

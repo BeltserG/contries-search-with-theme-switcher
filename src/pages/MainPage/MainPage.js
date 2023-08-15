@@ -8,6 +8,10 @@ function MainPage(props) {
   const fullData = require("/public/data.json");
   const [searchCriteriaList, setSearchCriteriaList] = React.useState({name:"", region: ""})
   const [searchRequest, setSearchRequest] = React.useState(fullData)
+  const [cardPageStatus, setCardPageStatus] = React.useState(false)
+  function changeCardPageStatus (){
+      setCardPageStatus(prev=>!prev)
+  }
 
   React.useEffect(()=>{
     setSearchRequest(fullData.filter(item=>{
@@ -37,8 +41,8 @@ function MainPage(props) {
             />
         </header>
         <main>
-            <SearchPanel changeSearchRequest={changeSearchRequest}/>
-            <SearchResults searchRequest={searchRequest} fullData={fullData}/>
+            {!cardPageStatus && <SearchPanel changeSearchRequest={changeSearchRequest} cardPageStatus={cardPageStatus}/>}
+            <SearchResults searchRequest={searchRequest} fullData={fullData} cardPageStatus={cardPageStatus} changeCardPageStatus={changeCardPageStatus}/>
         </main>
     </div>
   )

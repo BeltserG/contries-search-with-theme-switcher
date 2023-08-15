@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import BackButton from './Components/BackButton.jsx';
+import BackButton from './Components/BackButton/BackButton.jsx';
 import "./style/CountryView.scss";
 
 const CountryView = ({data, changeCardPageStatus, changeCardData, cardPageStatus, fullData}) => {
