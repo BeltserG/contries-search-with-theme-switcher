@@ -2,8 +2,10 @@ import React from 'react';
 import BorderCountries from '../../../../features/BorderCountries/BorderCountries';
 import "./styles/Card.scss";
 import classNames from 'classnames';
+import { DarkModeContext } from '../../../../app/context/DarkModeContext';
 
 const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullData}) => {
+  const {darkMode} = React.useContext(DarkModeContext)
   let content = ()=>{
     return (
       <>
@@ -27,7 +29,7 @@ const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullD
     )
   };
   return (
-    <section className={classNames("card", cardPageStatus ? "fullview" : "")} key={data.name} onClick={()=>{
+    <section className={classNames("card", darkMode ? "card-dark" : "", cardPageStatus ? "fullview" : "")} key={data.name} onClick={()=>{
         if(!cardPageStatus){
             changeCardData(data)
             changeCardPageStatus()  

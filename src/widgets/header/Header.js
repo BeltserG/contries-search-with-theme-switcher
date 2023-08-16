@@ -1,15 +1,16 @@
 import React from "react";
+import classNames from "classnames";
 import imageLightMode from "./assets/dark_mode_FILL0_wght200_GRAD200_opsz40.svg";
 import imageDarkMode from "./assets/dark_mode_FILL1_wght200_GRAD200_opsz40.svg";
+import { DarkModeContext } from '../../app/context/DarkModeContext';
 import "./styles/Header.scss";
-import { VisualModeContext } from "../../app/VisualModeContext";
 
 const Header = () =>{
-    const { darkMode, changeMode } = React.useContext(VisualModeContext);
+    const {darkMode, toggleDarkMode} = React.useContext(DarkModeContext)
     return(
-        <div className="header">
+        <div className={classNames("header", darkMode ? "header-dark" : "")}>
             <h1 className="header__main-heading">Where in the world?</h1>
-            <div className="header__color-theme" onClick={()=>changeMode()}>
+            <div className="header__color-theme" onClick={()=>toggleDarkMode()}>
                 <img className="header__color-theme--icon" src={
                     darkMode ? imageDarkMode : imageLightMode
                 }/>

@@ -1,23 +1,19 @@
 import React, { StrictMode } from "react";
-import { VisualModeContext } from "./VisualModeContext";
+import classNames from "classnames";
 import MainPage from "../pages/MainPage/MainPage";
 import "./styles/App.scss"
-import classNames from "classnames";
+import { DarkModeContext, DarkModeContextProvider } from "./context/DarkModeContext";
+
 
 function App (){
-    const [darkMode, setDarkMode] = React.useState(false);
     const [page, setPage] = React.useState({currentPage: MainPage});
-    let darkModeClass = darkMode ? "dark" : "";
-    function changeMode(){
-        setDarkMode(prev=>!prev);
-    }
     return (
         <StrictMode>
-            <div className={classNames("app-container", darkModeClass)}>
-                <VisualModeContext.Provider value={{darkMode, changeMode}}>
+            <DarkModeContextProvider>
+                <div className={classNames("app-container")}>
                     <page.currentPage />
-                </VisualModeContext.Provider>
-            </div>
+                </div>
+            </DarkModeContextProvider>
         </StrictMode>
     )
 }

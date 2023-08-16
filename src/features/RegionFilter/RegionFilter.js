@@ -2,10 +2,12 @@ import React from "react";
 import "./styles/RegionFilter.scss";
 import expandMore from "./assets/expand_more_FILL0_wght400_GRAD200_opsz24.svg";
 import classNames from "classnames";
+import { DarkModeContext } from "../../app/context/DarkModeContext";
 
 const RegionFilter = ({changeSearchRequest})=>{
     const [selectedValue, setselectedValue] = React.useState("Filter by Region")
     const [selectListOpened, setselectedListOpened] = React.useState(false);
+    const {darkMode} = React.useContext(DarkModeContext)
     function clickFilter(e){
         if(e.target.classList.contains("filter__select--option")){
             setselectedValue(e.target.value)
@@ -29,7 +31,7 @@ const RegionFilter = ({changeSearchRequest})=>{
                 <option className="filter__select--option" value="oceania">oceania</option>
             </select>
         </div> */}
-        <div className="filter__select" onClick={clickFilter}>
+        <div className={classNames("filter__select", darkMode ? "filter__select-dark" : "")} onClick={clickFilter}>
             <div className="filter__select--selected">
                 <span>{selectedValue}</span>
                 <img className={classNames("expand-more-image", selectListOpened ? "select-list-opened" : "")}src={expandMore}></img>

@@ -28,3 +28,17 @@
     font-size: .75rem;
     font-weight: 400;
 }
+.country-search-dark{
+    background-color: v.$darkBlue;
+}
+.country-search-dark .country-search__input{
+    background-color: v.$darkBlue;
+    color: v.$white;
+}
+.country-search-dark .country-search__label__img{
+    filter: brightness(0) invert(1);
+    opacity: 1;
+}
+.country-search-dark .country-search__input::placeholder{
+    opacity: 1;
+}

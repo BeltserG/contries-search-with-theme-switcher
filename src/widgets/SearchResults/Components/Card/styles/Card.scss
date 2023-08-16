@@ -9,11 +9,7 @@
 
     cursor: pointer;
 }
-.fullview{
-    border-radius: 0;
-    background-color: transparent;
-    box-shadow: none;
-}
+
 .card__flag{
     width:100%;
     max-width: 30rem;
@@ -59,4 +55,12 @@
 }
 .card__languages{
 
+}
+.card-dark{
+    background-color: v.$darkBlue;
+}
+.fullview{
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
 }

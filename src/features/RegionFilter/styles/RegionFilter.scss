@@ -23,7 +23,7 @@
 }
 .expand-more-image{
     width:1rem;
-    transition: v.$trans-fast;
+    transition: transform v.$trans-fast;
 }
 .select-list-opened{
     transform: rotate(180deg);
@@ -41,7 +41,7 @@
     border-radius: .5rem;
     opacity:0;
     visibility: hidden;
-    transition: v.$trans-fast;
+    transition: opacity v.$trans-fast;
 }
 .options-container-opened{
     opacity: 1;
@@ -58,4 +58,15 @@
 .filter__select--option:hover,
 .filter__select--option:focus{
     border-bottom: 1px solid v.$darkGray;
+}
+
+.filter__select-dark .filter__select--selected{
+    background-color: v.$darkBlue;
+}
+.filter__select-dark .options-container{
+    background-color: v.$darkBlue;
+
+}
+.filter__select-dark .expand-more-image{
+    filter: brightness(0) invert(1);
 }

@@ -1,7 +1,9 @@
 import React from 'react';
+import classNames from 'classnames';
 import { Header } from '../../widgets/Header/Header';
 import SearchPanel from '../../widgets/SearchPanel/SearchPanel';
 import SearchResults from '../../widgets/SearchResults/SearchResults';
+import { DarkModeContext } from '../../app/context/DarkModeContext';
 import "./styles/MainPage.scss";
 
 function MainPage(props) {
@@ -9,6 +11,7 @@ function MainPage(props) {
   const [searchCriteriaList, setSearchCriteriaList] = React.useState({name:"", region: ""})
   const [searchRequest, setSearchRequest] = React.useState(fullData)
   const [cardPageStatus, setCardPageStatus] = React.useState(false)
+  const {darkMode} = React.useContext(DarkModeContext);
   function changeCardPageStatus (){
       setCardPageStatus(prev=>!prev)
   }
@@ -33,12 +36,9 @@ function MainPage(props) {
     setSearchCriteriaList(prev=>{return {...prev, [criteria]: value === "none" ? "" : value}});
   }
   return(
-    <div className='main-page'>
+    <div className={classNames("main-page", darkMode ? "main-page-dark" : "")}>
         <header>
-            <Header 
-                changeMode={props.changeMode}
-                darkMode={props.darkMode}
-            />
+            <Header/>
         </header>
         <main>
             {!cardPageStatus && <SearchPanel changeSearchRequest={changeSearchRequest} cardPageStatus={cardPageStatus}/>}
