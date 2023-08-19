@@ -4,8 +4,26 @@
     display: flex;
     flex-direction: column;
     background-color: v.$veryLightGray;
+    min-height: 100dvh;
 }
 .main-page-dark{
     background-color: v.$veryDarkBlueDarkMode;
     color: v.$white;
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 1.5rem;
+}
+
+@media (min-width: 600px){
+    .main-content{
+        padding:1.25rem 5rem;
+    }
+}
+@media (min-width:1200px){
+    .main-content{
+        
+    }
 }

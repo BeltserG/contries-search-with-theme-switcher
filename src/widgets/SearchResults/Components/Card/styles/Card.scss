@@ -64,3 +64,13 @@
     background-color: transparent;
     box-shadow: none;
 }
+
+@media (min-width: 600px){
+    .card.fullview {
+        display: flex;
+        align-items: center;
+    }
+    .card.fullview .card__flag{
+        width:auto;
+    }
+}

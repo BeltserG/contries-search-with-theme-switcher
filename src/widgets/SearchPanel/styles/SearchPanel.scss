@@ -5,6 +5,17 @@
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding: 1.25rem 1rem;
+    // padding: 1.25rem 1rem;
     gap:2rem;
+}
+
+@media (min-width: 600px){
+    .search-panel{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+@media (min-width:1200px){
+
 }

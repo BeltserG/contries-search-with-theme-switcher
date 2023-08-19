@@ -19,3 +19,7 @@
 .border-countries__btn{
     @include v.button;
 }
+.border-countries__btn.dark{
+    background-color: v.$darkBlue;
+    color: v.$white;
+}

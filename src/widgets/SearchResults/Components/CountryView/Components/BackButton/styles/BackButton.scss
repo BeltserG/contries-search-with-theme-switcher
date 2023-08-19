@@ -12,3 +12,10 @@
 .btn-back__img{
     width: 20px;
 }
+.btn-back.dark{
+    background-color: v.$darkBlue;
+    color: v.$white;
+}
+.btn-back.dark .btn-back__img{
+    filter: brightness(0) invert(1)
+}

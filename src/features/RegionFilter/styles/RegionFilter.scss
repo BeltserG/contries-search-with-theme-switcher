@@ -1,12 +1,13 @@
 @use "/src/app/styles/Variables" as v;
 
 .filter__select{
-    font-size: .8rem;
+    --section-size: .8rem;
+    font-size: var(--section-size);
     font-weight: 600;
     display: flex;
     flex-direction: column;
-    gap:.25rem;
-    width: 14rem;
+    gap:5rem;
+    width: calc(var(--section-size)*16);
     position:relative;
     cursor: pointer;
 }
@@ -15,14 +16,14 @@
     display: flex;
     background-color: v.$white;
     box-shadow: v.$smallShadow;
-    padding: 1rem 1rem 1rem 2rem ;
-    border-radius: .5rem;
+    padding: var(--section-size) var(--section-size) var(--section-size) calc(var(--section-size)*2) ;
+    border-radius: .5em;
 }
 .filter__select--selected span{
     flex:1;
 }
 .expand-more-image{
-    width:1rem;
+    width:1em;
     transition: transform v.$trans-fast;
 }
 .select-list-opened{
@@ -30,15 +31,15 @@
 }
 .options-container{
     position:absolute;
-    top: 3.3rem;
+    top: 3.8em;
     width:100%;
     display: flex;
     flex-direction: column;
     // align-items: flex-start;
     background-color: v.$white;
     box-shadow: v.$smallShadow;
-    padding: 1rem 2rem;
-    border-radius: .5rem;
+    padding: 1em 2em;
+    border-radius: .5em;
     opacity:0;
     visibility: hidden;
     transition: opacity v.$trans-fast;
@@ -49,9 +50,9 @@
 }
 .filter__select--option{
     text-transform: capitalize;
-    font-size: .8rem;
+    font-size: .9em;
     font-weight: 600;
-    padding: .2rem 0;
+    padding: .2em 0;
     border-bottom: 1px solid transparent;
 
 }
@@ -69,4 +70,16 @@
 }
 .filter__select-dark .expand-more-image{
     filter: brightness(0) invert(1);
+}
+
+@media (min-width: 600px){
+    .filter__select{
+        --section-size: .9rem;
+    }
+}
+
+@media (min-width: 1200px){
+    .filter__select{
+        --section-size: 1rem;
+    }
 }

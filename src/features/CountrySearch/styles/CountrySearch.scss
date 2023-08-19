@@ -1,21 +1,23 @@
 @use "/src/app/styles/Variables" as v;
 
 .country-search{
+    --section-size: 1rem;
+    font-size: var(--section-size);
     background-color: v.$white;
     box-shadow: v.$smallShadow;
-    padding: .75rem 2rem;
+    padding: .75em 2em;
     display: flex;
     align-items: center;
-    gap:1.25rem;
-    border-radius: .5rem;
+    gap:1.25em;
+    border-radius: .5em;
+    width: min(calc(var(--section-size)*30), 100%);
 }
 .country-search__label{
 
 }
 .country-search__label__img{
-    width: 1.5rem;
+    width: 1.5em;
     filter: invert(53%) sepia(27%) saturate(0%) hue-rotate(243deg) brightness(95%) contrast(87%);
-    opacity: .75;
 }
 .country-search__input{
     width:100%;
@@ -24,8 +26,7 @@
 }
 .country-search__input::placeholder{
     color: v.$darkGray;
-    opacity: .5;
-    font-size: .75rem;
+    font-size: calc(var(--section-size)*0.75);
     font-weight: 400;
 }
 .country-search-dark{
@@ -41,4 +42,15 @@
 }
 .country-search-dark .country-search__input::placeholder{
     opacity: 1;
+}
+
+@media (min-width: 600px){
+    .country-search{
+        --section-size: 1.1rem;
+    }
+}
+@media (min-width:1200px){
+    .country-search{
+        --section-size: 1.2rem;
+    }
 }

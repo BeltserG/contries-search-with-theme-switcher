@@ -40,7 +40,7 @@ function MainPage(props) {
         <header>
             <Header/>
         </header>
-        <main>
+        <main className='main-content'>
             {!cardPageStatus && <SearchPanel changeSearchRequest={changeSearchRequest} cardPageStatus={cardPageStatus}/>}
             <SearchResults searchRequest={searchRequest} fullData={fullData} cardPageStatus={cardPageStatus} changeCardPageStatus={changeCardPageStatus}/>
         </main>

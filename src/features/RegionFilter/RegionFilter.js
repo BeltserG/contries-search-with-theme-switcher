@@ -21,16 +21,6 @@ const RegionFilter = ({changeSearchRequest})=>{
     }
     return(
         <>
-        {/* <div className="filter">
-            <select onChange={(e)=>changeSearchRequest(e.target.value, "region")} className="filter__select">
-                <option className="filter__select--option" value="none">none</option>
-                <option className="filter__select--option" value="africa">africa</option>
-                <option className="filter__select--option" value="americas">americas</option>
-                <option className="filter__select--option" value="asia">asia</option>
-                <option className="filter__select--option" value="europe">europe</option>
-                <option className="filter__select--option" value="oceania">oceania</option>
-            </select>
-        </div> */}
         <div className={classNames("filter__select", darkMode ? "filter__select-dark" : "")} onClick={clickFilter}>
             <div className="filter__select--selected">
                 <span>{selectedValue}</span>
