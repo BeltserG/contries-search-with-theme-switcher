@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import "./styles/SearchResults.scss"
 import CountryView from './Components/CountryView/CountryView';
 import AllResults from './Components/AllResults/AllResults';
 // import countriesRequest  from './api/CountriesApi';

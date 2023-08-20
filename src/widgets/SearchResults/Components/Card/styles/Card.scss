@@ -1,10 +1,14 @@
 @use "/src/app/styles/Variables" as v;
 
 .card{
-    border-radius: .5rem;
+    --section-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--section-size);
+    border-radius: .25em;
     background-color: v.$white;
     box-shadow: v.$smallShadow;
-    width:calc(minmax(100%, 125rem));
+    // width:calc(minmax(100%, 125rem));
     overflow: hidden;
 
     cursor: pointer;
@@ -12,28 +16,32 @@
 
 .card__flag{
     width:100%;
-    max-width: 30rem;
+    // max-width: 30rem;
 }
 .card__info{
     display: flex;
     flex-direction: column;
-    gap: .25rem;
-    padding: 2rem 1.5rem;
+    gap: .75em;
+    padding: 2em 1.5em;
 }
 .card__info p{
-    font-size: .9rem;
+    font-size: .9em;
+    line-height: 1.5rem;
 }
 .fullview .card__info{
-    padding: 2rem 0;
-    gap: .4rem;
+    padding: 2em 0;
+    gap: 1em;
 }
 .card__info span{
-    font-weight: 800;
+    font-weight: 600;
     text-transform: capitalize;
 }
 .card__info--country-name{
-    margin-bottom:1rem;
-    font-size: 1.25rem;
+    // margin-bottom:1em;
+    font-size: 1.25em;
+}
+.fullview .card__info--country-name{
+    font-size: 1.5em;
 }
 .card__info--country-name-native{
 
@@ -48,7 +56,7 @@
 
 }
 .card__info--domain{
-    margin-top: 2.5rem;
+    margin-top: 2.5em;
 }
 .card__info--currencies{
 
@@ -66,11 +74,61 @@
 }
 
 @media (min-width: 600px){
-    .card.fullview {
-        display: flex;
-        align-items: center;
+    .fullview{
+        --section-size: 1.1rem;
+        // flex-direction: row;
     }
-    .card.fullview .card__flag{
-        width:auto;
+
+    .fullview.card__info{
+        gap: 1rem;
+    }
+    .fullview .card__flag{
+    }
+    .card__info--domain{
+        margin-top: 0;
+    }
+    .fullview .card__info-sections{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    .card__info-section1{
+    
+    }
+    
+    .card__info-section2{
+    
+    }
+}
+
+@media (min-width:900px){
+    .fullview{
+        --section-size: 1.2rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+    }
+    .fullview .card__flag{
+        width: 50%;
+
+    }
+    .fullview .card__info{
+        width: 50%;
+    }
+    .fullview .card__info-sections{
+        flex-direction: column;
+    }
+    .card__info--domain{
+        margin-top: 0;
+    }
+
+}
+
+@media (min-width: 1200px){
+    .fullview{
+        gap: 6rem;
+    }
+    .fullview .card__info-sections{
+        flex-direction: row;
     }
 }

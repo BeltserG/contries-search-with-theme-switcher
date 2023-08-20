@@ -12,14 +12,20 @@ const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullD
         <img className='card__flag' src={data.flag}/>
         <div className="card__info">
           <h3 className='card__info--country-name'>{data.name}</h3>
-          {cardPageStatus && <p className='card__info--country-name-native'><span className=''>native name:</span> {data.nativeName}</p>}
-          <p className='card__info--population'><span className=''>population:</span> {data.population.toLocaleString()}</p>
-          <p className='card__info--region'><span className=''>region:</span> {data.region}</p>
-          {cardPageStatus && <p><span className=''>sub region:</span> {data.subregion}</p>}
-          <p className='card__info--capital'><span className=''>capital:</span> {data.capital}</p>
-          {cardPageStatus && <p className='card__info--domain'><span className=''>top level domain:</span> {data.topLevelDomain}</p>}
-          {cardPageStatus && <p className='card__info--currencies'><span className=''>currencies:</span> {data.currencies.map(item=>item.name).join(", ")}</p>}
-          {cardPageStatus && <p className='card__info--languages'><span className=''>languages:</span> {data.languages.map(item=>item.name).join(", ")}</p>}
+          <div className="card__info-sections">
+            <div className="card__info-section1">
+              {cardPageStatus && <p className='card__info--country-name-native'><span className=''>native name:</span> {data.nativeName}</p>}
+              <p className='card__info--population'><span className=''>population:</span> {data.population.toLocaleString()}</p>
+              <p className='card__info--region'><span className=''>region:</span> {data.region}</p>
+              {cardPageStatus && <p><span className=''>sub region:</span> {data.subregion}</p>}
+              <p className='card__info--capital'><span className=''>capital:</span> {data.capital}</p>
+            </div>
+            <div className="card__info-section2">
+              {cardPageStatus && <p className='card__info--domain'><span className=''>top level domain:</span> {data.topLevelDomain}</p>}
+              {cardPageStatus && <p className='card__info--currencies'><span className=''>currencies:</span> {data.currencies.map(item=>item.name).join(", ")}</p>}
+              {cardPageStatus && <p className='card__info--languages'><span className=''>languages:</span> {data.languages.map(item=>item.name).join(", ")}</p>}
+            </div>
+          </div>
           {cardPageStatus && <BorderCountries
             fullData={fullData}
             changeCardData={changeCardData}

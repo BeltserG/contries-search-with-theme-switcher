@@ -23,3 +23,19 @@
     background-color: v.$darkBlue;
     color: v.$white;
 }
+
+@media (min-width: 600px){
+    .border-countries{
+        margin:0;
+    }
+    .border-countries__heading{
+    }
+}
+@media (min-width: 1200px){
+    .border-countries{
+        flex-direction: row;
+    }
+    .border-countries__heading{
+        min-width: 12rem;
+    }
+}
