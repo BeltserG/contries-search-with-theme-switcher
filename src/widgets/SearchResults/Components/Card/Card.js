@@ -9,7 +9,7 @@ const Card = ({data, cardPageStatus, changeCardPageStatus, changeCardData, fullD
   let content = ()=>{
     return (
       <>
-        <img className='card__flag' src={data.flag}/>
+        <img className='card__flag' src={data.flag} alt={data.name}/>
         <div className="card__info">
           <h3 className='card__info--country-name'>{data.name}</h3>
           <div className="card__info-sections">
