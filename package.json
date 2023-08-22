@@ -1,6 +1,6 @@
 {
-  "homepage": "https://beltserg.github.io/rest-countries-api-with-color-theme-switcher",
-  "name": "project-from-scratch",
+  "homepage": "https://beltserg.github.io/contries-search-with-theme-switcher",
+  "name": "contries-search-with-theme-switcher",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",
